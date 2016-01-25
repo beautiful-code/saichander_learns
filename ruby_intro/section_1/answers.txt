@@ -1,0 +1,10 @@
+1)B , A
+2)15,125
+3)putc will truncate the string if it has multiple byte characters  and returns just first byte
+4)print will output all the strings in one line while puts adds a line after printing each string
+5)capitalize will convert first letter of each word to uppercase,while upcase wll convert all letters to uppercase.
+6)gets reads the input along with the line break while gets.chomp removes line break and just reads user input.
+7)1...10 will not include 10 but 1..10 will include even 10
+8)x.reverse wont apply changes to x, it shouls be assigned to another variable,x.reverse! will apply changes to the variable x itself.
+9)In array you can store and retrieve data using indices while in hash you can store and retrieve data using key-value pairs.
+
