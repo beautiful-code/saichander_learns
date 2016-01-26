@@ -1,0 +1,25 @@
+1)arguments are values passed to a method call,splat arguments are used when we dont have idea about the number of arguments
+
+
+2)a.2,3,5,6,7
+  b.7,6,5,3,2
+  c.-1
+  d.1
+
+
+3)Symbols as keys of hash are faster as symbols are stored only and have one object-id,also it saves memory.
+
+
+4).to_sym and .intern, both these methods convert strings into symbols.
+
+
+5)||= is a conditional assignment operator which assigns values only if the varaiable is empty,
+  while = assigns values to variables everytime it is used
+
+
+6)block is a piece of code without any name to it,while procedure is a named block which can be used many times.
+
+
+7)Lambda check for the number of arguments passed to it,while procedure assigns unspecified arguments to nil.
+  lambda returns the control back to the calling method while proc doesn't.
+
