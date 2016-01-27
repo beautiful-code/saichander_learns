@@ -1,0 +1,21 @@
+1)superclass mismatch for class C,as ruby doesnt allow multiple inheritance.
+
+2)@instance_var   @@class_var,instance variable is for class instances,but class variables are
+ just for classes you cannot call class variables with instances of class.
+
+3)super keyword will help to refer to parent class methods and variables.
+
+
+4)To read a variable from class, attr_reader is used and to write/update a variable attr_writer
+is used,they internally create methods to access and write variables respectively.
+
+
+5)include keyword is used to include module in a class also you dont need a scope resolution 
+operator to access constants and methods of module.
+
+extend keyword is to used to extend class with module,we can access constants and methods using
+class name
+
+require keyword is used to add modules to the interpreter.
+
+
