@@ -1,0 +1,3 @@
+1)Ruby Gem is a open source library which contains spec dir,bin dir ,readme file.Each gem has a name ,version and platform.
+  Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed. 
+  It solves Dependency conflicts.
