@@ -1,6 +1,6 @@
 class Player
-  def name(a)
-    @a=a
+  def name
+    @a
   end
   def name=(value)
     @a=value
@@ -13,10 +13,14 @@ end
 one=Player.new
 two=Player.new
 three=Player.new
-one.name("sachin")
-two.name("kohli")
-puts three.name("Dhoni")
-puts one.name=("raina")
+one.name=("sachin")
+two.name=("kohli")
+ three.name=("Dhoni")
+ puts one.name
+ puts two.name
+ puts three.name
+ one.name=("raina")
+ puts one.name
 Player.team
 
 

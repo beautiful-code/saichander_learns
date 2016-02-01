@@ -11,6 +11,7 @@ class SearchResults
     @browser.goto "http://google.com"
     @browser.text_field(name: 'q').set(@query)
     @browser.button(name: 'btnG').click
+    sleep(10)
   end
 
 
@@ -25,23 +26,42 @@ class SearchResults
     @browser.descs(:css,".st")
   end
 
-  def length
-    # puts "No of Results : #{@browser.element(:css,'.srg .r a , span+ .r a').count}"
+  def size
+    puts "No of Results : #{ @browser.titles(:css,".r a").count}"
   end
 end
 
 sr=SearchResults.new("ruby oops")
-link=sr.link
-title=sr.title
-desc=sr.desc
-puts link.count
-puts desc.count
-puts title.count
-sr.length
-desc.each do
-  |a| puts a.text
+while true do
+  puts "1.size 2.title 3.link 4.description"
+  choice = gets.chomp.to_i
+
+  case choice
+  when 1
+    sr.size
+  when 2
+    title=sr.title
+    print "Enter the search result number you want: "
+    i = gets.chomp.to_i
+    i=i-1
+    puts title[i].text
+  when 3
+    link=sr.link
+    print "Enter the search result number you want: "
+    i = gets.chomp.to_i
+    i=i-1
+    puts link[i]
+  when 4
+    desc=sr.desc
+    print "Enter the search result number you want: "
+    i = gets.chomp.to_i
+    i=i-1
+    puts desc[i].text
+  else
+    puts "Wrong Choice"
+  end
 end
-puts "asdsf"
+
 
 
 
