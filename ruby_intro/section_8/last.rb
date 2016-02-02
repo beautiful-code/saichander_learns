@@ -11,13 +11,15 @@ class SearchResults
     @browser.text_field(name: 'q').set(@query)
     @browser.button(name: 'btnG').click
     sleep(5)
-    @nk=Nokogiri::HTML(@browser.html)
+    @page=Nokogiri::HTML(@browser.html)
   end
   def results
-    @NK_obj=@nk.css("._SWb , .st , .r")
-    puts @NK_obj.class
-    obj=SearchResult.new(@NK_obj)
-    return obj
+    @search_result_elements=@page.css("div.g")
+    @search_result_objects=@search_result_elements.collect {|res| SearchResult.new(res)}
+    return @search_result_objects
+  end
+  def size
+    puts "No. of search results: #{@page.css("div.g").length}"
   end
 end
 
@@ -38,7 +40,8 @@ class SearchResult
 end
 
 sr=SearchResults.new("ruby oops")
-sr.results.url
-sr.results.title
-sr.results.desc
+sr.size
+sr.results[1].url
+sr.results[0].title
+sr.results[0].desc
 
