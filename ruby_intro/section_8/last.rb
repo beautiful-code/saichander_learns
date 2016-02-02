@@ -4,7 +4,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class SearchResults
-  attr_accessor :link
   def initialize(query)
     @query=query
     @browser=Watir::Browser.new
@@ -15,7 +14,8 @@ class SearchResults
     @nk=Nokogiri::HTML(@browser.html)
   end
   def results
-    @NK_obj=@nk.css("div.g")
+    @NK_obj=@nk.css("._SWb , .st , .r")
+    puts @NK_obj.class
     obj=SearchResult.new(@NK_obj)
     return obj
   end
@@ -38,8 +38,7 @@ class SearchResult
 end
 
 sr=SearchResults.new("ruby oops")
-test=sr.results
-puts test
-test.url
-test.title
-test.desc
+sr.results.url
+sr.results.title
+sr.results.desc
+
