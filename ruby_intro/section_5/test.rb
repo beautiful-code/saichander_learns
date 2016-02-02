@@ -1,7 +1,7 @@
 class Stack
   def initialize(number)
     @max_size=number
-    @stack=Array.new()
+    @stack = Array.new()
   end
 
   def push(a)
@@ -32,7 +32,7 @@ end
 one=Stack.new(10)
 while true
   puts "enter ur choice 1.push 2.pop 3.top 4.display 5.size"
-  choice=gets.chomp
+  choice = gets.chomp
   case choice
   when '1'
     puts "enter elemnt to be pushed"
